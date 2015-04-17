@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <% if('index' === current.source) { %>
-<%- partial("../_head", {"title":"Posts | GBC"}) %>
-    <% } else { %>
 <%- partial("../_head", {"title":title + " | GBC"}) %>
-    <% } %>
   </head>
   <body>
     <img class="bg hidden-xs" src="/images/GBC-onaijin.jpg">
@@ -13,7 +9,7 @@
 <%- partial("../_nav") %>
 
     <div class="container">
-      <% if('index' !== current.source) { %>
+    
       <div class="row">
         <div class="col-xs-12">
           <h2>
@@ -22,9 +18,15 @@
           </h2>
         </div>
       </div>
-      <% } %>
 
 <%- yield %>
+
+
+<nav>
+  <ul class="pager">
+    <li class="previous"><a href="/post_list"><span aria-hidden="true">&larr;</span> Back</a></li>
+  </ul>
+</nav>
 
 <%- partial("../_footer") %>
     </div>

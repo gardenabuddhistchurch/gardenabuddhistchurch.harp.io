@@ -1,0 +1,40 @@
+<%
+function excerpt(content) {
+  if(content.indexOf("<!-- more -->") == -1) return content;
+  else return content.split("<!-- more -->")[0]; 
+}
+
+function loopPosts(callback) {
+  var keys = []
+  , key
+  , i
+  , _data = public.posts._data
+  ;
+  
+  for (key in _data) {
+    keys.push(key);
+  }
+  
+  i = keys.length;
+  while(i--) {
+    key = keys[i];
+    
+    callback(key, _data[key]);
+  }
+  
+}
+%>
+
+<% loopPosts(function(key, post) { %>
+  <h3>
+    <a href="/posts/<%= key %>">
+      <%= post.title %>
+    </a>
+    <small><%= post.date %></small>
+  </h3>
+  <div class="well well-sm">
+    <%- excerpt(partial('posts/' + key)) %>
+    
+    <a href="/posts/<%= key %>">more ...</a>
+  </div>
+<% }); %>

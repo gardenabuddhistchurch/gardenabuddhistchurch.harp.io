@@ -18,8 +18,8 @@
           <a href="/calendar">Calendar</a>
         </li>
 
-        <li class="<%- 'posts' === current.path[0] ? 'active' : '' %>">
-          <a href="/posts/">Posts</a>
+        <li class="<%- /^post/.test(current.path[0]) ? 'active' : '' %>">
+          <a href="/post_list">Posts</a>
         </li>
 
         <li class="dropdown <%- current.source == 'about' ? 'active' : '' %>">
