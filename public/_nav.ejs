@@ -1,0 +1,63 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">GBC</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="<%- current.source == 'calendar' ? 'active' : '' %>">
+          <a href="/calendar">Calendar</a>
+        </li>
+
+        <li class="<%- 'posts' === current.path[0] ? 'active' : '' %>">
+          <a href="/posts/">Posts</a>
+        </li>
+
+        <li class="dropdown <%- current.source == 'about' ? 'active' : '' %>">
+          <a href="#" class="dropdown-toggle"
+            data-toggle="dropdown" role="button" aria-expanded="false"> 
+            About Us <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/about#contact">Contact Us / Map</a></li>
+            <li><a href="/about#membership">Membership</a></li>
+            <li><a href="/about#history">History</a></li>
+            <li><a href="/about#president_ministers">President / Ministers</a></li>
+          </ul
+        </li>
+
+        <li class="dropdown <%- current.source == 'services' ? 'active' : '' %>">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> 
+            Services <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/services#family_service">Family Service</a></li>
+            <li><a href="/services#buddhist_holidays">Buddhist Holidays</a></li>
+            <li><a href="/services#weddings">Weddings</a></li>
+            <li><a href="/services#funerals_memorials">Funerals / Memorials</a></li>
+            <li><a href="/services#service_faq">Service FAQ</a></li>
+          </ul
+        </li>
+
+        <li class="<%- current.source == 'organizations' ? 'active' : '' %>">
+          <a href="/organizations">Organizations</a>
+        </li>
+
+        <li class="<%- current.source == 'buddhism' ? 'active' : '' %>">
+          <a href="/buddhism">Buddhism</a>
+        </li>
+
+      </ul>
+ 
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

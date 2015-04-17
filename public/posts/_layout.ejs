@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <% if('index' === current.source) { %>
+<%- partial("../_head", {"title":"Posts | GBC"}) %>
+    <% } else { %>
+<%- partial("../_head", {"title":title + " | GBC"}) %>
+    <% } %>
+  </head>
+  <body>
+    <img class="bg hidden-xs" src="/images/GBC-onaijin.jpg">
+
+<%- partial("../_nav") %>
+
+    <div class="container">
+      <% if('index' !== current.source) { %>
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>
+            <%- title %>
+            <small><%- date %></small>
+          </h2>
+        </div>
+      </div>
+      <% } %>
+
+<%- yield %>
+
+<%- partial("../_footer") %>
+    </div>
+
+<%- partial("../_javascript") %>
+  </body>
+</html>

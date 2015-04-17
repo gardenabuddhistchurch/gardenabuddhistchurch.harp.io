@@ -1,0 +1,17 @@
+{
+  "name": "gardenabuddhistchurch.org",
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.*",
+    "bootstrap": "3.3.*",
+    "slick-carousel": "1.5.*",
+    "components-font-awesome": "4.3.*"
+  }
+}

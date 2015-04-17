@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+<%- partial("_head") %>
+  </head>
+  <body>
+<%- partial("_nav") %>
+
+<% if('index' === current.path[0]) { %>
+<div class="container-fluid hidden-xs">
+  <div class="row no-gutters">
+    <div class="col-xs-12">
+      <img src="/images/gardena-buddhist-church-skew-cropped.jpg" class="img-responsive">
+    </div>
+  </div>
+</div>
+
+<% } else if('calendar' !== current.source) { %>
+  <img class="bg hidden-xs" src="/images/gardena-buddhist-church-maku.jpg">
+<% } %>
+
+    <div class="container">
+<%- yield %>
+
+<%- partial("_footer") %>
+    </div>
+
+<%- partial("_javascript") %>
+
+<% if('index' === current.path[0]) { %>
+<!-- facebook code -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<% } %>
+  </body>
+</html>
